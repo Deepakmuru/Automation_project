@@ -3,14 +3,15 @@ package com.deepak.automation.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.By;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+//TestNG is one of the Testing framework.
 
 public class Locators3
 {
     WebDriver driver;
-    @BeforeEach
+    @BeforeMethod
     public void setup()
     {
         driver = new FirefoxDriver();
@@ -29,7 +30,7 @@ public class Locators3
        System.out.println(driver.findElement(By.xpath("//header/div/button[1]/parent::div/button[2]")).getText());
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown()
     {
         driver.close();

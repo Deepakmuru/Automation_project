@@ -1,3 +1,4 @@
-target/
+jtarget/
 .idea/
 *.iml
+target/

@@ -1,6 +1,9 @@
 package com.deepak.automation;
 
-import org.junit.jupiter.api.*;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +13,7 @@ public class Locators2
 {
     WebDriver driver;
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
         driver = new FirefoxDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -34,8 +37,8 @@ public class Locators2
         System.out.println(driver.findElement(By.tagName("p")).getText());
         Thread.sleep(3000);
 
-        Assertions.assertEquals("You are successfully logged in.", driver.findElement(By.tagName("p")).getText());
-        Assertions.assertEquals("Hello " + name + ",", driver.findElement(By.tagName("h2")).getText());
+        Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "You are successfully logged in.");
+        Assert.assertEquals(driver.findElement(By.tagName("h2")).getText(), "Hello " + name + ",");
 
         driver.findElement(By.className("logout-btn")).click();
     }
@@ -57,7 +60,7 @@ public class Locators2
     return password;
 }
 
-    @AfterEach
+    @AfterMethod
     void teardown() {
         driver.close();
     }
