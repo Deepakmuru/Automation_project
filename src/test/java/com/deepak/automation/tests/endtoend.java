@@ -4,7 +4,7 @@ package com.deepak.automation.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.AfterMethod;
@@ -14,7 +14,7 @@ public class endtoend {
 
     @BeforeMethod
     public void setUp() {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/#");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(5));
