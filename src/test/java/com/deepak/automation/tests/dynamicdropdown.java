@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class dynamicdropdown {
@@ -25,6 +26,25 @@ public class dynamicdropdown {
         Thread.sleep(2000);
         driver.findElement(By.xpath("(//a[@text='Bengaluru (BLR)'])[2]")).click();
         Thread.sleep(2000);
+        
+
+        System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+        System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+
+        if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+            System.out.println("its enabled");
+            assert true;
+        } 
+        else 
+            assert false;
+        
+       
+    }
+
+    @AfterMethod
+    public void teardown() {
+        driver.quit();
     }
 
 }
