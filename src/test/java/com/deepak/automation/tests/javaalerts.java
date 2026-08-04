@@ -19,7 +19,7 @@ public class javaalerts {
 
     @Test
     public void testAlerts() {
-        String name = "Deepak";
+        String name = "Deepaks";
         driver.findElement(By.id("name")).sendKeys(name);
         driver.findElement(By.id("alertbtn")).click();
         System.out.println(driver.switchTo().alert().getText());
