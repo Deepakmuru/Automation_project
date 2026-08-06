@@ -32,7 +32,8 @@ public class dynamicdropdown {
         driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
         System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
 
-        if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+        String div1Style = driver.findElement(By.id("Div1")).getAttribute("style");
+        if(div1Style != null && div1Style.contains("1")) {
             System.out.println("its enabled");
             assert true;
         } 
