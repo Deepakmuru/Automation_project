@@ -20,7 +20,7 @@ public class Complex
         driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(java.util.Objects.requireNonNull(java.time.Duration.ofSeconds(2)));
+        driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(2));
 
 
         w = new WebDriverWait(driver, java.time.Duration.ofSeconds(5));

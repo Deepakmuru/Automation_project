@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import java.time.Duration;
+import java.util.Objects;
 import java.util.function.Function;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -27,8 +28,8 @@ public class fluent
     {
         driver.findElement(By.cssSelector("[id='start'] button")).click();
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-            .withTimeout(Duration.ofSeconds(30))
-            .pollingEvery(Duration.ofSeconds(3))
+            .withTimeout(Objects.requireNonNull(Duration.ofSeconds(30)))
+            .pollingEvery(Objects.requireNonNull(Duration.ofSeconds(3)))
             .ignoring(NoSuchElementException.class);
 
         WebElement foo = wait.until(new Function<WebDriver, WebElement>() {

@@ -17,7 +17,7 @@ public class endtoend {
         driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/#");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(java.util.Objects.requireNonNull(java.time.Duration.ofSeconds(5)));
     }
 
     @Test

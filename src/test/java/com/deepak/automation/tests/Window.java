@@ -28,14 +28,20 @@ public class Window
     {
         driver.findElement(By.xpath("(//a[contains(text(),'Free Access to InterviewQues/ResumeAssistance/Material')])[1]")).click();
         
-        Set <String> Windows = driver.getWindowHandles();
+        Set<String> Windows = driver.getWindowHandles();
         Iterator<String> it = Windows.iterator();
-        String parentId = it.next();
-        String childId = it.next();
+        String parentId = java.util.Objects.requireNonNull(it.next());
+        String childId = java.util.Objects.requireNonNull(it.next());
 
         driver.switchTo().window(childId);
         System.out.println(driver.findElement(By.cssSelector(".im-para.red")).getText());
-        String emailID =  driver.findElement(By.cssSelector(".im-para.red")).getText().split("at")[1].trim().split(" ")[0] ;
+        String emailID = java.util.Objects.requireNonNull(
+            driver.findElement(By.cssSelector(".im-para.red"))
+                  .getText()
+                  .split("at")[1]
+                  .trim()
+                  .split(" ")[0]
+        );
         driver.switchTo().window(parentId);
         driver.findElement(By.id("username")).sendKeys(emailID);
 
