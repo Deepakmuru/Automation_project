@@ -1,6 +1,8 @@
 package com.deepak.automation.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
@@ -11,17 +13,23 @@ import java.util.Arrays;
 public class Complex
 {
     WebDriver driver;
+    WebDriverWait w;
     @BeforeMethod
     public void setup()
     {
         driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(java.util.Objects.requireNonNull(java.time.Duration.ofSeconds(5)));
+        driver.manage().timeouts().implicitlyWait(java.util.Objects.requireNonNull(java.time.Duration.ofSeconds(2)));
+
+
+        w = new WebDriverWait(driver, java.time.Duration.ofSeconds(5));
+
+
     }
 
     @Test
-    public void addtocart()
+    public void addtocart() throws InterruptedException
     {
         int j = 0;
         String [] itemslist = {"Tomato", "Beans", "Carrot"};
@@ -41,5 +49,24 @@ public class Complex
                     break;
             }
         }
+
+        driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+        driver.findElement(By.cssSelector("input.promocode")).sendKeys("rahulshettyacademy");
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='promoBtn']")));
+        driver.findElement(By.cssSelector("button[class='promoBtn']")).click();
+
+        //explicitly tells your code for wait few minutes and it doesn't affect others
+       
+        
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='promoInfo']")));
+        System.out.println(driver.findElement(By.cssSelector("span[class='promoInfo']")).getText());
+
     }
+
+
+
+
+
+   
 }
