@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Arrays;
 
-public class Complex
+public class ComplexTest
 {
     WebDriver driver;
     WebDriverWait w;

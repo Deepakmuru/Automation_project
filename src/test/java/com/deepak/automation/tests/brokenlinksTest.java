@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class brokenlinks {
+public class brokenlinksTest {
 
     WebDriver driver;
     @BeforeMethod

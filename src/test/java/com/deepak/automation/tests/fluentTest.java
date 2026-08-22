@@ -13,7 +13,7 @@ import java.util.function.Function;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class fluent
+public class fluentTest
 {
     WebDriver driver;
     @BeforeMethod

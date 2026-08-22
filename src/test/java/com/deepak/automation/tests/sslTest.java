@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ssl
+public class sslTest
 {
     WebDriver driver;
     @BeforeMethod

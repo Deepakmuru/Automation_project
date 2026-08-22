@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Scope
+public class ScopeTest
 {
    WebDriver driver;
    @BeforeMethod

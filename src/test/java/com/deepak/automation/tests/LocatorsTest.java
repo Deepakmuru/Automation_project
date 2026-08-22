@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 //TestNG is one of the Testing framework.
 
-public class Locators3
+public class LocatorsTest
 {
     WebDriver driver;
     @BeforeMethod

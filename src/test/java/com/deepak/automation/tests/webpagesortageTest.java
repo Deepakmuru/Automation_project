@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-public class webpagesortage {
+public class webpagesortageTest {
     
     WebDriver driver;
     @BeforeMethod
@@ -37,7 +37,7 @@ public class webpagesortage {
         // scan the name column and getText -> Rice -> Print the price of the Rice
         List<String> beanPrices = getList.stream()
                 .filter(s -> s.getText().contains("Beans"))
-                .map(webpagesortage::getPriceVeggie)
+                .map(webpagesortageTest::getPriceVeggie)
                 .collect(Collectors.toList());
 
     }

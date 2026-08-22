@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class scroll
+public class scrollTest
 {
     WebDriver driver;
     JavascriptExecutor js;

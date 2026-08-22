@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.List;
 
-public class Autosuggesstivedropdown
+public class AutosuggesstivedropdownTest
 {
     WebDriver driver;
     @BeforeMethod
